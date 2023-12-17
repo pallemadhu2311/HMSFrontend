@@ -1,0 +1,24 @@
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Password</th>
+    <th>Registered At</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.password}}</td>
+    <td>{{user.createdDate  | dateFormat}}</td>
+
+  </tr>
+</tbody>
+</table>
