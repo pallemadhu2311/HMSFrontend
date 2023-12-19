@@ -1,5 +1,5 @@
 <!-- user-registration.component.html -->
-
+<h2 class="textHead">Register and Create an Account</h2>
 <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
   <div class="card" id="carditem">
     <div class="form-group">
@@ -23,7 +23,7 @@
     <div class="form-group">
       <div class="col-md-12 row">
         <label for="phone">Mobile:</label>
-        <input type="number" maxlength="10" class="form-control" id="phone" formControlName="phone" required>
+        <input type="tel" maxlength="10" class="form-control" id="phone" formControlName="phone" required>
       </div>
     </div>
     <div class="form-group">

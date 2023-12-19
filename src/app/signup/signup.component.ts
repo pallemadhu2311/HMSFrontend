@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SignUpService } from '../service/sign-up.service';
+import { Route, Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class SignupComponent {
   signUpForm!: FormGroup;
   userData=[];
 
-  constructor(private fb:FormBuilder, private signUpServ:SignUpService){
+  constructor(private fb:FormBuilder, private signUpServ:SignUpService, private router:Router){
 
   }
 
@@ -39,7 +40,9 @@ export class SignupComponent {
         this.userData = response;
         console.log("userdata : ", this.userData);
         alert("User Created and inserted successfully");
+
         this.signUpForm.reset();
+        this.router.navigate(['login']);
       })
     }
     else{
