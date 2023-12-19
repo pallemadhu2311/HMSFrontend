@@ -1,0 +1,32 @@
+<div class="refreshButton d-flex justify-content-end">
+  <button class="btn btn-success" routerLink="misc/signupusers"> Refresh</button>
+</div>
+
+<table class="table table-bordered">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Full Name</th>
+    <th>Email</th>
+    <th>Profile Type</th>
+    <th>Phone Number</th>
+    <th>Password</th>
+    <th>Registered At</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.fullname}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.usertype}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.password}}</td>
+    <td>{{user.createdDate  | dateFormat}}</td>
+
+  </tr>
+</tbody>
+</table>

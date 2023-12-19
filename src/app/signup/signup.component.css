@@ -1,0 +1,29 @@
+.form-group{
+  padding:0px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+
+}
+
+#carditem {
+  width: 40%;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.textHead{
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 200;
+  text-decoration: underline;
+}
+
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  #carditem {
+    width: 80%; /* Adjust the width for smaller screens */
+  }
+
+  /* Add more specific styles for smaller screens if needed */
+}
