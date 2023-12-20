@@ -16,12 +16,13 @@ export class AuthserviceService {
   login(username: string, password: string): Observable<any> {
     const body = { username, password };
     const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-      withCredentials: true, // Include credentials
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+        }),
+        responseType: 'text' as const, // Specify the type explicitly
     };
     return this.http.post(`${this.baseUrl}/login`, body, httpOptions);
-  }
+}
+
 
 }

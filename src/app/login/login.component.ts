@@ -26,20 +26,39 @@ export class LoginComponent {
 
   onSubmit(): void {
     const { username, password } = this.loginForm.value;
+
+    // Check if username or password is empty
+    if (!username || !password) {
+        alert("Please enter both username and password.");
+        return;
+    }
+
     this.authService.login(username, password).subscribe(
-      (response) => {
-        console.log('Login successful:', response);
-        // Handle success, e.g., redirect to another page
-      },
-      (error) => {
-        console.error('Login failed:', error);
-        // Handle error, e.g., display an error message
-      }
+        (response) => {
+            console.log('Login successful:', response);
+            // Check if the response contains "Login Successful"
+            if (response.includes("Login Successful")) {
+                // Handle success, e.g., redirect to another page
+                this.route.navigate(['hostel/home']);
+            } else {
+                console.error('Login failed:', response);
+                // Handle unexpected response
+                alert("Login Failed");
+            }
+        },
+        (error) => {
+            console.error('Login failed:', error);
+            // Handle error, e.g., display an error message
+            alert("Login Failed. Please try again.");
+        }
     );
-  }
-
-
-
+}
 
 
 }
+
+
+
+
+
+

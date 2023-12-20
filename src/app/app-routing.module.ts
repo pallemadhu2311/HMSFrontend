@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { SignupusersdataComponent } from './misc/signupusersdata/signupusersdata.component';
+import { HomeComponent } from './HostelOwnerDashboard/home/home.component';
 
 const routes: Routes =
 [
@@ -22,6 +23,9 @@ const routes: Routes =
   },
   {
     path:'misc/signupusers',component:SignupusersdataComponent
+  },
+  {
+    path:'hostel/home',component:HomeComponent
   }
 ];
 
