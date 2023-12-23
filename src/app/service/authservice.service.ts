@@ -1,4 +1,3 @@
-
 import {
   HttpClient,
   HttpErrorResponse,
@@ -19,7 +18,6 @@ export class AuthserviceService {
 
   constructor(private http: HttpClient) { }
 
-
   login(username: string, password: string): Observable<any> {
     const body = { username, password };
     const httpOptions = {
@@ -36,4 +34,10 @@ export class AuthserviceService {
     console.log("isUserLoggedInSubject",this.isUserLoggedInSubject);
   }
 
+  isUserLoggedIn(): boolean {
+    // Implement the logic to check if the user is logged in
+    // For example, you can check if there's a user profile in localStorage
+    const userProfileString = localStorage.getItem('userProfile');
+    return userProfileString !== null;
+  }
 }

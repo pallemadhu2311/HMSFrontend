@@ -1,9 +1,7 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthserviceService } from '../service/authservice.service';
-
 
 @Component({
   selector: 'app-navbar',
@@ -20,20 +18,21 @@ export class NavbarComponent {
   constructor(
     private route: Router,
     private http: HttpClient,
-    private authServ: AuthserviceService
+    public authServ: AuthserviceService
   ) {}
 
   ngOnInit() {
     this.authServ.isUserLoggedIn$.subscribe((isLoggedIn) => {
-      this.isLoggedIn = isLoggedIn;
-      this.updateMenu();
+      this.isLoggedIn = true;
+      this.updateMenu(isLoggedIn);
     });
-    this.updateMenu(); // Initial check
+    const isLoggedIn = this.authServ.isUserLoggedIn();
+    this.updateMenu(isLoggedIn); // Initial check
 
   }
 
 
-  updateMenu() {
+  updateMenu(isLoggedIn:boolean) {
     const userProfileString = localStorage.getItem('userProfile');
 
     if (userProfileString !== null) {
