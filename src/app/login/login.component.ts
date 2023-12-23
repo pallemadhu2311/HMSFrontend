@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthserviceService } from '../service/authservice.service';
 import { Router } from '@angular/router';
+
 import { SignUpService } from '../service/sign-up.service';
+
 
 @Component({
   selector: 'app-login',
@@ -12,6 +14,7 @@ import { SignUpService } from '../service/sign-up.service';
 export class LoginComponent {
 
   loginForm !: FormGroup;
+
   isUserLoggedIn:boolean=false;
 
   constructor(private fb: FormBuilder, private authService: AuthserviceService, private route:Router,private signupserv:SignUpService) {
@@ -28,6 +31,7 @@ export class LoginComponent {
 
   onSubmit(): void {
     const { username, password } = this.loginForm.value;
+
     this.authService.login(username, password).subscribe(
         (response) => {
             console.log('Login successful:', response);
@@ -59,9 +63,6 @@ export class LoginComponent {
         }
     );
 }
-
-}
-
 
 
 
