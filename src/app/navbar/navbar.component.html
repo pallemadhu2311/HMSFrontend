@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">HMS</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -15,10 +17,12 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact">Contact Us</a>
         </li>
-        <li class="nav-item">
+
+        <li class="nav-item" *ngIf="!isLoggedIn">
           <a class="nav-link" routerLink="/signup">Signup</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isLoggedIn">
+
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
         <!-- <li class="nav-item dropdown">
@@ -36,10 +40,14 @@
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li> -->
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+      <form class="d-flex" role="search" >
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success" type="submit">Search</button>
+        &nbsp;&nbsp;
+        <button class="btn btn-outline-danger" (click)="onLogout()" *ngIf="isLoggedIn" type="submit">Logout</button>
       </form>
+
     </div>
   </div>
 </nav>
