@@ -4,6 +4,18 @@
   margin-bottom: 15px;
 
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.registration-container {
+  background-image: url('../../assets/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; /* 100% of the viewport height */
+  min-height: 100%; /* Ensure at least full viewport height */
+}
 
 #carditem {
   width: 40%;
@@ -11,13 +23,19 @@
   padding: 15px;
 }
 
-.textHead{
+.textHead {
   text-align: center;
-  margin-top: 20px;
+  padding-top: 20px; /* Use padding instead of margin */
   font-weight: 200;
   text-decoration: underline;
 }
 
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 /* Responsive styling for smaller screens */
 @media (max-width: 768px) {

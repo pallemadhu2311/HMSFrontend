@@ -1,1 +1,28 @@
-<p>login works!</p>
+<!-- user-registration.component.html -->
+<div class="registration-container">
+  <h2 class="textHead">Login to your Account</h2>
+  <form [formGroup]="loginForm">
+    <div class="card" id="carditem">
+      <div class="form-group">
+        <div class="col-md-12 row">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" id="username" formControlName="username" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-12 row">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" formControlName="password" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <a><button type="button" class="btn btn-warning" (click)="onSubmit()" >Login</button></a> &nbsp;&nbsp;
+        <a routerLink="/signup"><button type="submit" class="btn btn-primary">Register</button></a>
+        &nbsp; &nbsp;
+
+      </div>
+    </div>
+  </form>
+  </div>

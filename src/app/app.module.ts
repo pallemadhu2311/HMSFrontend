@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupusersdataComponent } from './misc/signupusersdata/signupusersdata.component';
 import { DateFormatPipe } from './pipes/date-format.pipe';
+import { HomeComponent } from './HostelOwnerDashboard/home/home.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DateFormatPipe } from './pipes/date-format.pipe';
     ContactComponent,
     NavbarComponent,
     SignupusersdataComponent,
-    DateFormatPipe
+    DateFormatPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
