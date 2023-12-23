@@ -1,4 +1,3 @@
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/User.model';
@@ -30,6 +29,5 @@ export class SignUpService {
     };
     return this.http.get(`${this.baseUrl}/profile?username=${username}`, httpOptions)
   }
-
 
 }

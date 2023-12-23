@@ -7,30 +7,35 @@ import { AboutComponent } from './about/about.component';
 import { SignupusersdataComponent } from './misc/signupusersdata/signupusersdata.component';
 import { HomeComponent } from './HostelOwnerDashboard/home/home.component';
 
-const routes: Routes =
-[
+const routes: Routes = [
   {
-    path:'login',component:LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:'signup',component:SignupComponent
+    path: 'signup',
+    component: SignupComponent,
   },
   {
-    path:'contact', component:ContactComponent
+    path: 'contact',
+    component: ContactComponent,
   },
   {
-    path:'about',component:AboutComponent
+    path: 'about',
+    component: AboutComponent,
   },
   {
-    path:'misc/signupusers',component:SignupusersdataComponent
+    path: 'misc/signupusers',
+    component: SignupusersdataComponent,
   },
   {
-    path:'hostel/home',component:HomeComponent
-  }
+    path: 'hostel/home',
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
