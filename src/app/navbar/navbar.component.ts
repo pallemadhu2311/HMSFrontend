@@ -19,6 +19,7 @@ export class NavbarComponent {
   constructor(
     private route: Router,
     private http: HttpClient,
+
     public authServ: AuthserviceService,
     private cdRef: ChangeDetectorRef
   ) { }
@@ -27,7 +28,6 @@ export class NavbarComponent {
     this.authServ.isUserLoggedIn$.subscribe((isLoggedIn) => {
       // this.isLoggedIn = true;
       this.updateMenu(isLoggedIn);
-
     });
     const isLoggedIn = this.authServ.isUserLoggedIn();
     this.updateMenu(isLoggedIn); // Initial check
@@ -35,6 +35,7 @@ export class NavbarComponent {
 
 
   updateMenu(isLoggedIn: boolean) {
+
     const userProfileString = localStorage.getItem('userProfile');
 
     if (userProfileString !== null) {

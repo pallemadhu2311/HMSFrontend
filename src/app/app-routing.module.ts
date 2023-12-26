@@ -40,6 +40,7 @@ const routes: Routes = [
     path: 'hostel/home',
     component: HomeComponent,
   },
+
   {
     path: 'regular/home',
     component: UserDashboardComponent,
@@ -78,4 +79,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
