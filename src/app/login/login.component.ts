@@ -18,7 +18,7 @@ export class LoginComponent {
     private authService: AuthserviceService,
     private route: Router,
     private signupserv: SignUpService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -35,17 +35,28 @@ export class LoginComponent {
         if (response.includes('Login Successful')) {
           // Fetch user profile after successful login
           this.signupserv.getUserProfile(username).subscribe(
-            (profileResponse) => {
-              console.log('User profile:', profileResponse);
+            (data) => {
+              // console.log('User profile:', data);
               // Store user profile in local storage or wherever needed
               localStorage.setItem(
                 'userProfile',
-                JSON.stringify(profileResponse)
+                JSON.stringify(data)
               );
               this.isUserLoggedIn = true;
-              console.log('IsUseLoggedIn : ', this.isUserLoggedIn);
+              //console.log('IsUseLoggedIn : ', this.isUserLoggedIn);
+
+              if (data.usertype === 'Hostel Owner') {
+                this.route.navigate(['hostel/home']);
+              }
+              else if (data.usertype === 'Regular User') {
+                this.route.navigate(['regular/home'])
+              }
+              else {
+                alert("Invalid User");
+              }
+
               // Handle success, e.g., redirect to another page
-              this.route.navigate(['hostel/home']);
+
             },
             (profileError) => {
               console.error('Error fetching user profile:', profileError);
