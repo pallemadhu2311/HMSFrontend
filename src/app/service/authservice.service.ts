@@ -11,12 +11,17 @@ import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
 })
 export class AuthserviceService {
   private isUserLoggedInSubject: BehaviorSubject<boolean> =
-    new BehaviorSubject<boolean>(false);
-    isUserLoggedIn$: Observable<boolean> = this.isUserLoggedInSubject.asObservable();
+    new BehaviorSubject<boolean>(this.isUserLoggedIn());
+  isUserLoggedIn$: Observable<boolean> = this.isUserLoggedInSubject.asObservable();
 
   private baseUrl = 'http://localhost:8080/api/auth';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.isUserLoggedInSubject.next(this.isUserLoggedIn());
+    this.isUserLoggedIn$.subscribe((isLoggedIn) => {
+      console.log('Is user logged in?', isLoggedIn);
+    });
+  }
 
   login(username: string, password: string): Observable<any> {
     const body = { username, password };
@@ -31,13 +36,14 @@ export class AuthserviceService {
 
   setLoggedIn(value: boolean) {
     this.isUserLoggedInSubject.next(value);
-    console.log("isUserLoggedInSubject",this.isUserLoggedInSubject);
   }
 
+
+
   isUserLoggedIn(): boolean {
-    // Implement the logic to check if the user is logged in
-    // For example, you can check if there's a user profile in localStorage
     const userProfileString = localStorage.getItem('userProfile');
     return userProfileString !== null;
   }
+
+
 }

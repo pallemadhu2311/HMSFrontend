@@ -21,6 +21,8 @@ import { SearchPersonComponent } from './HostelOwnerDashboard/search-person/sear
 import { SendNotificationComponent } from './HostelOwnerDashboard/send-notification/send-notification.component';
 import { ViewComplaintsComponent } from './HostelOwnerDashboard/view-complaints/view-complaints.component';
 import { BillingReportDetailsComponent } from './HostelOwnerDashboard/billing-report-details/billing-report-details.component';
+import { SidenavComponent } from './HostelOwnerDashboard/sidenav/sidenav.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,13 +43,15 @@ import { BillingReportDetailsComponent } from './HostelOwnerDashboard/billing-re
     SearchPersonComponent,
     SendNotificationComponent,
     ViewComplaintsComponent,
-    BillingReportDetailsComponent
+    BillingReportDetailsComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

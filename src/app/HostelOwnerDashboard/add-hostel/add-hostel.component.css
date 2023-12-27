@@ -1,0 +1,32 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  height: 90vh; /* 100% of the viewport height */
+  margin: 0;
+  margin-top: 10px;
+}
+
+.card {
+  width: 70%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.form-group.row {
+  margin-top: 10px;
+}
+
+input {
+  margin-top: 10px;
+
+}
+
+label {
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+select{
+  margin-top: 8px;
+}
