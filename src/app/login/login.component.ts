@@ -18,7 +18,9 @@ export class LoginComponent {
     private authService: AuthserviceService,
     private route: Router,
     private signupserv: SignUpService
+
   ) { }
+
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -35,6 +37,7 @@ export class LoginComponent {
         if (response.includes('Login Successful')) {
           // Fetch user profile after successful login
           this.signupserv.getUserProfile(username).subscribe(
+
             (data) => {
               // console.log('User profile:', data);
               // Store user profile in local storage or wherever needed
@@ -56,7 +59,6 @@ export class LoginComponent {
               }
 
               // Handle success, e.g., redirect to another page
-
             },
             (profileError) => {
               console.error('Error fetching user profile:', profileError);

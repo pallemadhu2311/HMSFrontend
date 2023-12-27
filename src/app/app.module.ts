@@ -25,6 +25,7 @@ import { SidenavComponent } from './HostelOwnerDashboard/sidenav/sidenav.compone
 import { FormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     ViewComplaintsComponent,
     BillingReportDetailsComponent,
     SidenavComponent
+
   ],
   imports: [
     BrowserModule,

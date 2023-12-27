@@ -14,6 +14,7 @@ export class NavbarComponent {
   userProfile: any;
   isLoggedIn: boolean = false;
   isHostelOwner: boolean = false;
+
   isRegularUser: boolean = false;
   userFullname: string = '';
 
@@ -27,6 +28,7 @@ export class NavbarComponent {
   ngOnInit() {
     console.log('NavbarComponent ngOnInit called');
     this.authServ.isUserLoggedIn$.subscribe((isLoggedIn) => {
+
       console.log('Is user logged in?', isLoggedIn);
       this.isLoggedIn = isLoggedIn;
       this.updateMenu();
@@ -43,6 +45,7 @@ export class NavbarComponent {
 
     if (userProfileString !== null) {
       this.userProfile = JSON.parse(userProfileString);
+
       this.userFullname = this.userProfile.fullname;
 
       if (this.userProfile.usertype === 'Hostel Owner') {
@@ -54,6 +57,7 @@ export class NavbarComponent {
       } else {
         console.log("__InvalidUser___");
       }
+
     }
   }
 

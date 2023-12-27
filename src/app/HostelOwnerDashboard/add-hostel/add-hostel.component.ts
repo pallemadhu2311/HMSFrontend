@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './add-hostel.component.css'
 })
 export class AddHostelComponent {
+
 selectedFeeType: any;
+
 
 }
