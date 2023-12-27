@@ -40,13 +40,13 @@ const routes: Routes = [
     path: 'hostel/home',
     component: HomeComponent,
   },
-
   {
     path: 'regular/home',
     component: UserDashboardComponent,
   },
   {
-    path: 'hostel/addhotel',
+
+    path: 'hostel/addhostel',
     component: AddHostelComponent,
   },
   {
@@ -79,4 +79,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

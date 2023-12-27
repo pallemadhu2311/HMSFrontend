@@ -59,7 +59,6 @@ export class LoginComponent {
               }
 
               // Handle success, e.g., redirect to another page
-            
             },
             (profileError) => {
               console.error('Error fetching user profile:', profileError);

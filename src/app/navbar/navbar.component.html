@@ -8,39 +8,90 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" *ngIf="authServ.isUserLoggedIn()">
-          <a class="nav-link active" aria-current="page" routerLink="/hostel/home">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="/hostel/home">Dashboard</a>
         </li>
+
+        <li class="nav-item dropdown" *ngIf="(authServ.isUserLoggedIn$ | async) && isHostelOwner; let isLoggedIn">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hostel
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/hostel/addhostel">Add Hostel</a></li>
+            <li><a class="dropdown-item" routerLink="hostel/managehostel">Manage Hostel</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item">Add New Joinee</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item" *ngIf="(authServ.isUserLoggedIn$ | async) && isHostelOwner; let isLoggedIn">
+          <a class="nav-link" routerLink="hostel/searchperson">Search Room</a>
+        </li>
+
+        <li class="nav-item dropdown" *ngIf="(authServ.isUserLoggedIn$ | async) && isHostelOwner; let isLoggedIn">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hostel Data
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="hostel/billingreports">Billing Details</a></li>
+            <li><a class="dropdown-item" routerLink="hostel/sendnotification">Send Notification</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="hostel/viewcomplaints">View Complaints</a></li>
+          </ul>
+        </li>
+
+        <!-- <li class="nav-item" *ngIf="authServ.isUserLoggedIn() && isHostelOwner">
+          <a class="nav-link" routerLink="hostel/searchperson">Search Person</a>
+        </li>
+
+
+
+        <li class="nav-item" *ngIf="authServ.isUserLoggedIn() && isHostelOwner">
+          <a class="nav-link" routerLink="hostel/sendnotification">Send Notification</a>
+        </li>
+
+
+
+        <li class="nav-item" *ngIf="authServ.isUserLoggedIn() && isHostelOwner">
+          <a class="nav-link" routerLink="hostel/viewcomplaints">View Complaints</a>
+        </li> -->
+
+
         <li class="nav-item">
           <a class="nav-link" routerLink="/about">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact">Contact Us</a>
         </li>
+
+        <!-- <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Misc
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/about">About</a></li>
+            <li><a class="dropdown-item" routerLink="/contact">Contact Us</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+
+
         <li class="nav-item" *ngIf="!authServ.isUserLoggedIn()">
           <a class="nav-link" routerLink="/signup">Signup</a>
         </li>
         <li class="nav-item" *ngIf="!authServ.isUserLoggedIn()">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">About</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
+
+
         <!-- <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li> -->
       </ul>
 
-      <div *ngIf="authServ.isUserLoggedIn()">
+      <!-- <div *ngIf="authServ.isUserLoggedIn()">
         {{userFullname}} &nbsp;&nbsp;
-      </div>
+      </div> -->
 
       <form class="d-flex" role="search" >
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
