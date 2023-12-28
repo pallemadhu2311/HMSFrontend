@@ -35,4 +35,7 @@ onFileChange(event: any): void {
 
 
 
+selectedFeeType: any;
+
+
 }
