@@ -23,7 +23,7 @@ import { ViewComplaintsComponent } from './HostelOwnerDashboard/view-complaints/
 import { BillingReportDetailsComponent } from './HostelOwnerDashboard/billing-report-details/billing-report-details.component';
 import { SidenavComponent } from './HostelOwnerDashboard/sidenav/sidenav.component';
 import { FormsModule } from '@angular/forms';
-
+import { AddroomComponent } from './HostelOwnerDashboard/addroom/addroom.component';
 
 
 @NgModule({
@@ -45,8 +45,8 @@ import { FormsModule } from '@angular/forms';
     SendNotificationComponent,
     ViewComplaintsComponent,
     BillingReportDetailsComponent,
-    SidenavComponent
-
+    SidenavComponent,
+    AddroomComponent
   ],
   imports: [
     BrowserModule,

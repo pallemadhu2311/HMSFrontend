@@ -1,7 +1,7 @@
 .card-container {
   display: flex;
   justify-content: center;
-  height: 90vh; /* 100% of the viewport height */
+  /* height: 90vh; 100% of the viewport height */
   margin: 0;
   margin-top: 10px;
 }
@@ -11,6 +11,7 @@
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  margin-top: 10px;
 }
 
 .form-group.row {
@@ -29,4 +30,11 @@ label {
 
 select{
   margin-top: 8px;
+}
+
+.registration-container {
+
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
 }
