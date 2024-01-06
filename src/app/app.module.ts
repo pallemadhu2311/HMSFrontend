@@ -48,7 +48,9 @@ import { AddroomComponent } from './HostelOwnerDashboard/addroom/addroom.compone
     ViewComplaintsComponent,
     BillingReportDetailsComponent,
     SidenavComponent,
-    AddroomComponent
+
+    AddroomComponent,
+
 
   ],
   imports: [
@@ -56,7 +58,8 @@ import { AddroomComponent } from './HostelOwnerDashboard/addroom/addroom.compone
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
