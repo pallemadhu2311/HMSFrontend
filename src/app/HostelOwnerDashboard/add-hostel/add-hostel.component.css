@@ -11,7 +11,9 @@
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+
   margin-top: 10px;
+
 }
 
 .form-group.row {
@@ -38,3 +40,4 @@ select{
   background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 
 }
+

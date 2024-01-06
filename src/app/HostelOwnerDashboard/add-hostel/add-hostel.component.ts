@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import Quill from 'quill';
 // import 'quill/dist/quill.snow.css';
 import { HostelService } from '../../service/hostel.service';
 import { HttpHeaders } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-add-hostel',
@@ -11,11 +13,13 @@ import { HttpHeaders } from '@angular/common/http';
   styleUrl: './add-hostel.component.css',
 })
 export class AddHostelComponent {
+
   selectedFeeType: any;
   selectedFiles: File[] = [];
   hostelForm!: FormGroup;
   HostelDetails: any = [];
   loggedUser: any;
+
 
   // ngAfterViewInit(): void {
   //   const editor = new Quill('#editor', {
