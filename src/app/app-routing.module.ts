@@ -45,7 +45,6 @@ const routes: Routes = [
     component: UserDashboardComponent,
   },
   {
-
     path: 'hostel/addhostel',
     component: AddHostelComponent,
   },

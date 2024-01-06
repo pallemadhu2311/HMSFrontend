@@ -21,13 +21,12 @@ export class SignUpService {
     return this.http.get<User[]>(this.baseUrl);
   }
 
+  // getUserProfile(username: string): Observable<any> {
+  //   return this.http.get(`${this.baseUrl}/profile?username=${username}`, { withCredentials: true });
+  // }
+
   getUserProfile(username: string): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    return this.http.get(`${this.baseUrl}/profile?username=${username}`, httpOptions)
+    return this.http.get(`${this.baseUrl}/profile?username=${username}`, { withCredentials: true });
   }
 
 }

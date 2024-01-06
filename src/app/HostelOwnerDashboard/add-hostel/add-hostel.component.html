@@ -1,31 +1,26 @@
-
 <div class="registration-container">
 <div class="card-container">
   <div class="card">
-    <form>
+    <form [formGroup]="hostelForm">
       <div class="container md-3">
         <div class="form-group row">
           <label class="col-sm-2 col-form-label"><i class="bi bi-building-add"></i>&nbsp;Hostel Name: </label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="Hostel Name" name="hostelname" />
+            <input type="text" class="form-control" placeholder="Hostel Name" name="hostelname" formControlName="hostelname" />
           </div>
         </div>
 
         <div class="form-group row">
-
           <label class="col-sm-2 col-form-label"><i class="bi bi-person-add"></i>&nbsp;Owner Name: </label>
-
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="hostelownername" placeholder="Hostel Owner Name" />
+            <input type="text" class="form-control" name="ownername" placeholder="Hostel Owner Name" formControlName="ownername"/>
           </div>
         </div>
 
         <div class="form-group row">
-
           <label class="col-sm-2 col-form-label"><i class="bi bi-buildings"></i>&nbsp; Hostel Type: </label>
-
           <div class="col-sm-9">
-            <select class="form-control" name="hosteltype">
+            <select class="form-control" name="hosteltype" formControlName="hosteltype">
               <option selected disabled>-- SELECT --</option>
               <option>Mens Hostel</option>
               <option>Womens Hostel</option>
@@ -36,29 +31,23 @@
         </div>
 
         <div class="form-group row">
-
           <label class="col-sm-2 col-form-label"><i class="bi bi-phone"></i>&nbsp; Phone No: </label>
-
           <div class="col-sm-9">
-            <input type="tel" maxlength="10" class="form-control" placeholder="Hostel Phone Name" name="hostelphone" />
+            <input type="tel" maxlength="10" class="form-control" placeholder="Hostel Phone Name" name="phoneno"  formControlName="phoneno"/>
           </div>
         </div>
 
         <div class="form-group row">
-
           <label class="col-sm-2 col-form-label"><i class="bi bi-envelope-at"></i> &nbsp;Email: </label>
           <div class="col-sm-9">
-            <input type="email" class="form-control" placeholder="Hostel Email" name="hostelemail" />
-
+            <input type="email" class="form-control" placeholder="Hostel Email" name="email" formControlName="email"/>
           </div>
         </div>
 
         <div class="form-group row">
-
           <label class="col-sm-2 col-form-label"><i class="bi bi-currency-rupee"></i>&nbsp;Fee Type:</label>
-
           <div class="col-sm-4">
-            <select class="form-control" [(ngModel)]="selectedFeeType" name="hostelfeetype">
+            <select class="form-control" [(ngModel)]="selectedFeeType" name="hostelfeetype" formControlName="feetype">
               <option selected disabled>-- SELECT --</option>
               <option value="sharetype">Share Type</option>
               <option value="flattype">Flat Type</option>
@@ -68,59 +57,56 @@
             Fee Structure :
           </label>
           <div class="col-sm-3" *ngIf="selectedFeeType === 'sharetype'">
-            <input type="number" class="form-control" placeholder="1 - Share Price" name="oneshare" />
-            <input type="number" class="form-control" placeholder="2 - Share Price" name="twoshare" />
-            <input type="number" class="form-control" placeholder="3 - Share Price" name="threeshare" />
-            <input type="number" class="form-control" placeholder="4 - Share Price" name="fourshare" />
-            <input type="number" class="form-control" placeholder="5 - Share Price" name="fiveshare" />
-
-            <input type="number" class="form-control" placeholder="Advance Amount" name="advanceamount" />
-
+            <input type="number" class="form-control" placeholder="1 - Share Price" name="oneshare" formControlName="oneshare"/>
+            <input type="number" class="form-control" placeholder="2 - Share Price" name="twoshare" formControlName="twoshare"/>
+            <input type="number" class="form-control" placeholder="3 - Share Price" name="threeshare" formControlName="threeshare"/>
+            <input type="number" class="form-control" placeholder="4 - Share Price" name="fourshare" formControlName="fourshare"/>
+            <input type="number" class="form-control" placeholder="5 - Share Price" name="fiveshare" formControlName="fiveshare"/>
+            <input type="number" class="form-control" placeholder="Advance Amount" name="advanceamount" formControlName="advanceamount"/>
           </div>
 
           <label class="col-sm-2 col-form-label" *ngIf="selectedFeeType === 'flattype'">
             Monthly Rent :
           </label>
           <div class="col-sm-3" *ngIf="selectedFeeType === 'flattype'">
-            <input type="number" class="form-control" placeholder="Monthly Price" name="monthlyflatprice" />
-
-            <input type="number" class="form-control" placeholder="Advance Amount" name="advanceamount" />
-
+            <input type="number" class="form-control" placeholder="Monthly Price" name="monthlyflatprice" formControlName="monthlyflatprice"/>
+            <input type="number" class="form-control" placeholder="Advance Amount" name="advanceamount" formControlName="flatadvanceamount"/>
           </div>
         </div>
 
         <div class="form-group row">
-
           <label class="col-sm-2 col-form-label"><i class="bi bi-house-add"></i> &nbsp;Rooms Type: </label>
           <div class="col-sm-10">
-            <input type="checkbox" name="alphabets" value="Alphabets"> &nbsp; &nbsp;
+            <input type="checkbox" name="alphabets" value="Alphabets" formControlName="alphabets"> &nbsp; &nbsp;
             <label><i class="bi bi-alphabet-uppercase"></i> &nbsp;Alphabets</label> &nbsp; &nbsp;
-            <input type="checkbox" name="numeric" value="Alphabets"> &nbsp; &nbsp;
+            <input type="checkbox" name="numbers" value="Numbers" formControlName="numbers"> &nbsp; &nbsp;
             <label><i class="bi bi-123"></i>&nbsp;Numeric</label> &nbsp; &nbsp;
-            <input type="checkbox" name="numeric" value="Alphabets"> &nbsp; &nbsp;
+            <input type="checkbox" name="combinationtype" value="Combination" formControlName="combinationtype"> &nbsp; &nbsp;
             <label>Combination &nbsp;&nbsp;(<i class="bi bi-alphabet-uppercase"></i>&nbsp;<i class="bi bi-123"></i> ) </label> &nbsp; &nbsp;
           </div>
         </div>
 
-        <div class="form-group row">
+        <!-- <div class="form-group row">
           <label class="col-sm-2 col-form-label"><i class="bi bi-camera"></i>&nbsp;Hostel Photos:</label>
           <div class="col-sm-9">
-            <input type="file" multiple (change)="onFileChange($event)" class="form-control"/>
+
+            <input type="file" multiple (change)="onFileChange($event)" formControlName="hostelphotos" class="form-control"/>
+
           </div>
-        </div>
+        </div> -->
 
 
         <div class="form-group row">
           <label class="col-sm-2 col-form-label"><i class="bi bi-geo-alt"></i>&nbsp;Hostel Address: </label>
           <div class="col-sm-4 ">
-            <input type="text" class="form-control" placeholder="Flat / Building No." name="flat">
-            <input type="text" class="form-control" placeholder="City" name="city">
-            <input type="text" class="form-control" placeholder="State" name="state">
+            <input type="text" class="form-control" placeholder="Flat / Building No." name="flat" formControlName="flat">
+            <input type="text" class="form-control" placeholder="City" name="city" formControlName="city">
+            <input type="text" class="form-control" placeholder="State" name="state" formControlName="state">
           </div>
           <div class="col-sm-4">
-            <input type="text" class="form-control" placeholder="Street" name="street">
-            <input type="text" class="form-control" placeholder="District" name="district">
-            <input type="number" class="form-control" placeholder="Pincode" name="pincode">
+            <input type="text" class="form-control" placeholder="Street" name="street" formControlName="street">
+            <input type="text" class="form-control" placeholder="District" name="district" formControlName="district">
+            <input type="number" class="form-control" placeholder="Pincode" name="pincode" formControlName="pincode">
 
           </div>
         </div>
@@ -128,19 +114,19 @@
         <div class="form-group row">
           <label class="col-sm-2 col-form-label"><i class="bi bi-diagram-3"></i>&nbsp; Amenities: </label>
           <div class="col-sm-10">
-            <input type="checkbox" name="ac"> &nbsp;
+            <input type="checkbox" name="ac" formControlName="ac"> &nbsp;
             <label>AC</label> &nbsp;
-            <input type="checkbox" name="nonac"> &nbsp;
+            <input type="checkbox" name="nonac" formControlName="nonac"> &nbsp;
             <label>Non-AC</label> &nbsp;
-            <input type="checkbox" name="washingmachine"> &nbsp;
+            <input type="checkbox" name="washingmachine" formControlName="washingmachine"> &nbsp;
             <label>Washing Machine</label> &nbsp;
-            <input type="checkbox" name="geyser"> &nbsp;
+            <input type="checkbox" name="geyser" formControlName="geyser"> &nbsp;
             <label>Geyser</label> &nbsp;
-            <input type="checkbox" name="gym"> &nbsp;
+            <input type="checkbox" name="gym" formControlName="gym"> &nbsp;
             <label>GYM</label> &nbsp;
-            <input type="checkbox" name="parking"> &nbsp;
+            <input type="checkbox" name="parking" formControlName="parking"> &nbsp;
             <label>Parking</label> &nbsp;
-            <input type="checkbox" name="hostelbus"> &nbsp;
+            <input type="checkbox" name="hostelbus" formControlName="hostelbus"> &nbsp;
             <label>Hostel Bus</label>
           </div>
         </div>
@@ -148,21 +134,18 @@
         <div class="form-group row">
           <div class="col-sm-2 col-form-label"><i class="bi bi-info-circle"></i>&nbsp; Instructions:</div>
           <div class="col-sm-9">
-            <div id="editor" style="height:200px" class="hostelinstructions"></div>
+            <textarea rows="3" class="form-control" name="instructions" formControlName="instructions">
+            </textarea>
           </div>
         </div>
 
-
         <div class="form-group row">
           <div class="col-sm-10">
-            <input type="submit" class="btn btn-primary">
-
+            <input type="submit" class="btn btn-primary" (click)="registerHostel()">
           </div>
         </div>
       </div>
     </form>
   </div>
 </div>
-
 </div>
-

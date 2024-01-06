@@ -20,7 +20,7 @@ export class HomeComponent {
 
     if(loggedInUserData !== null){
       this.userProfile = JSON.parse(loggedInUserData);
-      //console.log("UserProfileDetails : ", this.userProfile);
+      console.log("UserProfileDetails : ", this.userProfile);
       this.isUserLoggedIn = true;
 
       console.log("UserLoggedIn : ",this.isUserLoggedIn);
